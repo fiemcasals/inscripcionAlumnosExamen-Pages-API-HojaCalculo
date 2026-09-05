@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 450px;
             backdrop-filter: blur(10px);
@@ -47,7 +48,8 @@
             color: #374151;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 12px;
             border: 1px solid #d1d5db;
@@ -58,7 +60,8 @@
             transition: border-color 0.2s;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: #22c55e;
             box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
@@ -95,6 +98,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
@@ -127,17 +131,17 @@
 
     <script>
         // ¡Atención! Acá tenés que pegar la URL que te da Google Apps Script
-        const SCRIPT_URL = 'ACA_VA_TU_URL_DE_GOOGLE'; 
+        const SCRIPT_URL = 'ACA_VA_TU_URL_DE_GOOGLE';
 
         const form = document.getElementById('formularioInscripcion');
         const mensaje = document.getElementById('mensaje');
         const btnSubmit = document.getElementById('btnSubmit');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault(); // Evitamos que la página se recargue
 
             // Si no pusiste la URL, avisamos
-            if (SCRIPT_URL === 'ACA_VA_TU_URL_DE_GOOGLE') {
+            if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxiomI4nKIwWp1O0mKVroyFQWmxVWuYbdIl5peoX2vzxCO85UZVe_h2unxG4rptbgoN/exec') {
                 mensaje.style.color = 'red';
                 mensaje.textContent = 'Falta configurar la URL de Google Apps Script en el código JS.';
                 return;
@@ -156,20 +160,21 @@
                 body: data,
                 mode: 'no-cors' // Evita errores de seguridad en navegadores
             })
-            .then(() => {
-                mensaje.style.color = '#166534';
-                mensaje.textContent = '¡Inscripción registrada con éxito!';
-                form.reset(); // Vaciamos el formulario
-                btnSubmit.textContent = 'Enviar Inscripción';
-                btnSubmit.disabled = false;
-            })
-            .catch(error => {
-                mensaje.style.color = 'red';
-                mensaje.textContent = 'Hubo un error al enviar los datos.';
-                btnSubmit.textContent = 'Enviar Inscripción';
-                btnSubmit.disabled = false;
-            });
+                .then(() => {
+                    mensaje.style.color = '#166534';
+                    mensaje.textContent = '¡Inscripción registrada con éxito!';
+                    form.reset(); // Vaciamos el formulario
+                    btnSubmit.textContent = 'Enviar Inscripción';
+                    btnSubmit.disabled = false;
+                })
+                .catch(error => {
+                    mensaje.style.color = 'red';
+                    mensaje.textContent = 'Hubo un error al enviar los datos.';
+                    btnSubmit.textContent = 'Enviar Inscripción';
+                    btnSubmit.disabled = false;
+                });
         });
     </script>
 </body>
+
 </html>
