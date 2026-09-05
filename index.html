@@ -131,9 +131,9 @@
 
     <script>
         // ¡Atención! Acá tenés que pegar la URL que te da Google Apps Script
-        const SCRIPT_URL = ''https://script.google.com/macros/s/AKfycbxiomI4nKIwWp1O0mKVroyFQWmxVWuYbdIl5peoX2vzxCO85UZVe_h2unxG4rptbgoN/exec'';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxiomI4nKIwWp1O0mKVroyFQWmxVWuYbdIl5peoX2vzxCO85UZVe_h2unxG4rptbgoN/exec';
 
-            const form = document.getElementById('formularioInscripcion');
+        const form = document.getElementById('formularioInscripcion');
         const mensaje = document.getElementById('mensaje');
         const btnSubmit = document.getElementById('btnSubmit');
 
@@ -141,7 +141,7 @@
             e.preventDefault(); // Evitamos que la página se recargue
 
             // Si no pusiste la URL, avisamos
-            if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxiomI4nKIwWp1O0mKVroyFQWmxVWuYbdIl5peoX2vzxCO85UZVe_h2unxG4rptbgoN/exec') {
+            if (SCRIPT_URL === 'ACA_VA_TU_URL_DE_GOOGLE') {
                 mensaje.style.color = 'red';
                 mensaje.textContent = 'Falta configurar la URL de Google Apps Script en el código JS.';
                 return;
